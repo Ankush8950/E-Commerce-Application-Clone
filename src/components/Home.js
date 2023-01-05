@@ -8,7 +8,6 @@ function Home() {
   const [data, setData] = useState([]);
   const [filterdata, setFilterData] = useState(data);
   const [addproduct, setAddProduct] = useState([]);
-  // console.log(data)
 
   // Api call
   // https://api.escuelajs.co/api/v1/products
@@ -55,16 +54,16 @@ function Home() {
     <>
       <div className="flex flex-col items-center justify-center">
         {/* navbar component */}
-        <Navbar product={addproduct} />
+        <Navbar product={addproduct} setAddProduct={setAddProduct} />
 
         {/* All category filter */}
-        <div className="flex w-full items-center justify-between mt-20">
+        <div className="flex flex-col  md:flex-row  w-full items-center justify-between mt-20">
           <FilterBtn filterItems={filterItems} />
 
           {/* search box */}
-          <div className="pr-20">
+          <div className="pr-0 md:pr-20">
             <input
-              className="border-2 w-[300px] h-10 rounded p-3"
+              className="border-2 w-[270px] lg:w-[300px] h-10 rounded p-3 mb-10 md:mb-0"
               type="search"
               placeholder="search by product name"
               onChange={searchItme}
@@ -73,7 +72,7 @@ function Home() {
         </div>
 
         {/* All product mapping */}
-        <div className="App pl-20 pr-20 pt-10 flex-wrap flex items-center justify-center border-y-2">
+        <div className="pl-3 lg:pl-20 pr-3 lg:pr-20 pt-3 lg:pt-10 flex-wrap flex items-center justify-center border-y-2">
           {data.length > 0 ? (
             data.map((val) => {
               return (
