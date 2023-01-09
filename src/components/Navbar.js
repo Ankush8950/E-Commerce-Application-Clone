@@ -1,22 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaCartArrowDown } from "react-icons/fa";
 import ShopingCart from "./Shopingcart/ShopingCart";
 import { Link } from "react-router-dom";
 
 const Navbar = ({product,setAddProduct}) => {
   const [cart, setCart] = useState(false);
-  const [count, setcount] = useState();
 
-
-  // count the product in a cart
-const countproduct = () => {
-    const pro = product.length;
-    setcount(pro);
-  };
-
-useEffect(()=>{
-  countproduct()
-})
   
   return (
     <>
@@ -35,7 +24,7 @@ useEffect(()=>{
         >
           <h1 className="font-normal text-lg capitalize">cart</h1>
           <FaCartArrowDown className="ml-3 text-lg sm:text-xl" />
-          <h1 className="absolute right-[-10px] bottom-[10px]">{count}</h1>
+          <h1 className="absolute right-[-10px] bottom-[10px]">{product.length}</h1>
         </div>
       </div>
 

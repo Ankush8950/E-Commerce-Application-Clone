@@ -60,7 +60,6 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
         <div>
         {/* mapping the cart product */}
           {products.length > 0 ?  products.map((val, index) => {
-            {/* console.log(val); */}
             return (
               <div className="flex  itmes-center justify-between pl-5" key={index}>
                 <div className="flex flex-col sm:flex-row">
@@ -90,7 +89,6 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
                   className="mt-10 mr-0 sm:mr-10 pr-5 font-bold text-xl text-[#E21717] cursor-pointer"
                   onClick={() => {
                     removeItem(val.id)
-                    // console.log(val.id)
                   }}
                 >
                   <AiTwotoneDelete />
@@ -98,7 +96,7 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
               </div>
             );
           })
-          :  <div className="h-auto flex flex-col items-center pt-10"> 
+          :  <div className="h-auto flex flex-col items-center pt-10 pb-[8rem]"> 
           <img className="w-[12rem]" src={empty} alt="" />
           <h1 className="ml-5 mt-5 text-xl capitalize">your cart is Empty.</h1>
            </div>
