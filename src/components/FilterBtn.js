@@ -6,7 +6,7 @@ const FilterBtn = ({ filterItems}) => {
       <div className="mt-5 pl-0 md:pl-20 mb-3 text-center">
         <button
           className="bg-[#1f242c] text-white text-sm p-2 m-1 sm:m-2 rounded-lg hover:bg-white hover:text-[#1f242c] border-2"
-          onClick={() => filterItems("Clothes")}
+          onClick={() => filterItems("Man's SHOES")}
         >
           Clothes
         </button>
@@ -18,13 +18,13 @@ const FilterBtn = ({ filterItems}) => {
         </button>
         <button
           className="bg-[#1f242c] text-white text-sm p-2 m-2 rounded-lg hover:bg-white hover:text-[#1f242c] border-2"
-          onClick={() => filterItems("Titulo 3 Cambiado")}
+          onClick={() => filterItems("Furniture")}
         >
           Furniture
         </button>
         <button
           className="bg-[#1f242c] text-white text-sm p-2 m-2 rounded-lg hover:bg-white hover:text-[#1f242c] border-2"
-          onClick={() => filterItems("electronics test")}
+          onClick={() => filterItems("Electronics")}
         >
           Electronics
         </button>
