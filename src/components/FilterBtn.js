@@ -18,7 +18,7 @@ const FilterBtn = ({ filterItems}) => {
         </button>
         <button
           className="bg-[#1f242c] text-white text-sm p-2 m-2 rounded-lg hover:bg-white hover:text-[#1f242c] border-2"
-          onClick={() => filterItems("Furniture")}
+          onClick={() => filterItems("Cambio")}
         >
           Furniture
         </button>

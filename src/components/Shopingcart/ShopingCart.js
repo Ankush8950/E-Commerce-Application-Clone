@@ -44,7 +44,7 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
 
   return (
     <>
-      <div className=" h-5/6 w-9/12  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 absolute top-20  z-10 	overflow-y-scroll">
+      <div className=" h-5/6 w-9/12  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700  top-20  z-10 	overflow-y-scroll fixed ">
         <div className="flex items-center justify-between ">
           <div className="p-3 sm:p-5 font-bold text-base sm:text-xl">
             Cart Items
