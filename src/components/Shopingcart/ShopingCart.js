@@ -7,11 +7,45 @@ import empty from "../image/empty.jpg"
 
 const ShopingCart = ({ setacart, products ,setAddProduct}) => {
   const [productCount, setProductCount] = useState(0);
-
   //  Throw the message product successfull
   const orderPlace = () => {
     toast("Product order successfull");
   };
+
+
+  const handleIncrement = (id) =>{
+    let IncrementItem = products.map((item)=>{
+      if(item.id === id){
+        let inc = item.qantity + 1
+
+        return {
+          ...item,
+          qantity:inc
+        }
+      }else{
+        return item
+      }
+    })
+    setAddProduct(IncrementItem)
+  }
+
+  const handleDecrement = (id) =>{
+    let decrementItem = products.map((item)=>{
+      if(item.id === id){
+        let dec = item.qantity - 1
+        
+        return {
+          ...item,
+          qantity: dec
+        }
+      }else{
+        return item
+      }
+    }).filter((item)=>item.qantity !== 0)
+    setAddProduct(decrementItem)
+  }
+
+
 
 
   // remove product in a cart
@@ -24,6 +58,8 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
    setAddProduct(getId);
   //  countproduct()
  };
+
+
 
 
   // Total calculate the amount
@@ -64,7 +100,7 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
               <div className="flex  itmes-center justify-between pl-5" key={index}>
                 <div className="flex flex-col sm:flex-row">
                   <img
-                    className="rounded w-[7rem] md:w-[10rem] h-[100px] md:h-[150px] mt-10 ml-0 sm:ml-5"
+                    className="rounded w-[5rem] md:w-[10rem] h-[100px] md:h-[150px] mt-10 ml-0 sm:ml-5"
                     src={val.images}
                     alt=""
                   />
@@ -84,6 +120,13 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
                     </h1>
                     
                   </div>
+                <div className="flex items-center justify-center">
+                  <div className="flex border-2 rounded shadow-gray-200">
+                    <button className="border-r-2 w-10 h-10 hover:bg-[#758283] hover:text-white rounded" onClick={()=>handleDecrement(val.id)}>-</button>
+                    <h1 className="w-10 flex items-center justify-center">{val.qantity}</h1>
+                    <button className="border-l-2 w-10 h-10 hover:bg-[#758283] hover:text-white rounded" onClick={()=>handleIncrement(val.id)}>+</button>
+                  </div>
+                </div>
                 </div>
                 <div
                   className="mt-10 mr-0 sm:mr-10 pr-5 font-bold text-xl text-[#E21717] cursor-pointer"

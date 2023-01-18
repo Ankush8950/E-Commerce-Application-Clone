@@ -8,7 +8,7 @@ function Home() {
   const [data, setData] = useState([]);
   const [filterdata, setFilterData] = useState(data);
   const [addproduct, setAddProduct] = useState([]);
-  console.log(data)
+  // console.log(data)
   // Api call
   // https://api.escuelajs.co/api/v1/products
   const url = "https://api.escuelajs.co/api/v1/products";
@@ -47,7 +47,11 @@ function Home() {
 
   //  add product in a cart
   const addedProduct = (data) => {
-    setAddProduct([...addproduct, data]);
+    const cartItem = {
+      ...data,
+      qantity : 1
+    }
+    setAddProduct([...addproduct, cartItem]);
   };
 
   return (
