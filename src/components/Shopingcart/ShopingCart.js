@@ -80,7 +80,7 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
 
   return (
     <>
-      <div className=" h-5/6 w-9/12  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700  top-20  z-10 	overflow-y-scroll fixed ">
+      <div className=" h-5/6 w-full  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700  top-20  z-10 	overflow-y-scroll fixed ">
         <div className="flex items-center justify-between ">
           <div className="p-3 sm:p-5 font-bold text-base sm:text-xl">
             Cart Items
@@ -107,29 +107,30 @@ const ShopingCart = ({ setacart, products ,setAddProduct}) => {
 
                   {/* <h1 onChange={()=>setproductCount(index)}>{val.productCount}</h1> */}
 
-                  <div className="items-center justify-center mt-2 sm:mt-10 ml-0 sm:ml-20">
-                  <h1 className="font-semibold text-sm sm:text-lg w-[15rem]">
+                  <div className="items-center justify-center mt-2 sm:mt-10 ml-0 sm:ml-20 w-[6rem] sm:w-auto">
+                  <h1 className="font-semibold text-sm sm:text-lg ">
                       {val.category.name}
                     </h1>
 
-                  <h1 className="font-semibold text-xs sm:text-sm w-[15rem]">
+                  <h1 className="font-semibold text-xs sm:text-sm ">
                       {val.title}
                     </h1>
-                    <h1 className="mr-10 font-normal text-sm sm:text-lg text-[#38CC77] capitalize">
+                    <h1 className="mr-10 w-full font-normal text-sm sm:text-lg text-[#38CC77] capitalize">
                       price: ₹ {val.price}
                     </h1>
                     
                   </div>
-                <div className="flex items-center justify-center">
+            
+                </div>
+                    <div className="flex items-center justify-center">
                   <div className="flex border-2 rounded shadow-gray-200">
-                    <button className="border-r-2 w-10 h-10 hover:bg-[#758283] hover:text-white rounded" onClick={()=>handleDecrement(val.id)}>-</button>
+                    <button className="border-r-2 w-7 sm:w-10 h-7 sm:h-10 hover:bg-[#758283] hover:text-white rounded" onClick={()=>handleDecrement(val.id)}>-</button>
                     <h1 className="w-10 flex items-center justify-center">{val.qantity}</h1>
-                    <button className="border-l-2 w-10 h-10 hover:bg-[#758283] hover:text-white rounded" onClick={()=>handleIncrement(val.id)}>+</button>
+                    <button className="border-l-2 w-7 sm:w-10 h-7 sm:h-10 hover:bg-[#758283] hover:text-white rounded" onClick={()=>handleIncrement(val.id)}>+</button>
                   </div>
                 </div>
-                </div>
                 <div
-                  className="mt-10 mr-0 sm:mr-10 pr-5 font-bold text-xl text-[#E21717] cursor-pointer"
+                  className="flex items-center justify-center pr-[1rem] sm:pr-[5rem] font-bold text-xl text-[#E21717] cursor-pointer"
                   onClick={() => {
                     removeItem(val.id)
                   }}
